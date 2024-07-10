@@ -1,0 +1,55 @@
+body{
+    background-color: black;
+    color: white;
+    font-family: Ubuntu;
+}
+
+h1, h2, h3, h4, h5{
+    font-weight: normal;
+    margin: 0;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 2.4em;
+}
+
+a, a.hover, a.visited{
+    cursor: pointer;
+    border: 1px solid #d4af37;
+    padding: 10px;
+    border-radius: 4px;
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.wrapper{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.site-form{
+    margin-top: 10px;
+    border: 1px solid #d4af37;
+    padding: 20px;
+}
+
+.site-form input, .site-form select, .site-form label{
+    display: block;
+    padding: 10px;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+.site-form input[type="submit"]{
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    color: #d4af37;
+    font-size: 2em;
+    width: 30%;
+    margin: auto;
+    cursor: pointer;
+}
+
+.site-form #id_radius{
+    width: 96.5%;
+}

@@ -1,0 +1,48 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+    <h1>
+        Click a location on the map and adjust settings to find environmental 
+        disasters in that area!
+    </h1>
+    <form class="site-form" action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Generate">
+        <div id="map" style="height: 500px;"></div>
+    </form>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([0, 0], 2);
+        var circle;
+        var radiusInput = document.getElementById('id_radius');
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        map.on('click', function(e) {
+            if (circle) {
+                map.removeLayer(circle);
+            }
+
+            var latlng = e.latlng;
+            circle = L.circle(latlng, {
+                color: 'blue',
+                fillColor: 'blue',
+                fillOpacity: 0.2,
+                // Convert to kilometers.
+                radius: 1000 * document.getElementById('id_radius').value,
+                draggable: true,
+            }).addTo(map);
+
+            updateFormFields(circle);
+        });
+
+        function updateFormFields(circle) {
+            document.getElementById('id_lat').value = circle.getLatLng().lat;
+            document.getElementById('id_lon').value = circle.getLatLng().lng;
+            radiusInput.value = (circle.getRadius() / 1000).toFixed(2);  // Convert to kilometers
+        }
+    </script>
+{% endblock %}
