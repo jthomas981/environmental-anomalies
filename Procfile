@@ -1,1 +1,0 @@
-web gunicorn environmental-anomalies.wsgi:application --log-file -
