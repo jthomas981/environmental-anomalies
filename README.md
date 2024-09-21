@@ -6,15 +6,32 @@ Once the "Search" button is clicked, a detailed map of the Earth is displayed, f
 
 ## Installation
 
-1. Clone the repository:
+1. **Clone the repository:**
 ```
 git clone https://github.com/jthomas981/environmental-anomalies/
 cd environmental-anomalies
 ```
-2. Install dependencies using the provided script:
+
+2. **Set up a virtual environment:**
+If you don’t have virtualenv installed, you can install it via pip:
+```pip install virtualenv```
+Then create and activate a virtual environment:
+* **For macOS/Linux:**
 ```
-./build.sh
+virtualenv venv
+source venv/bin/activate
 ```
+* **For Windows:**
+```
+python -m venv venv
+venv\Scripts\activate
+```
+
+3. **Install dependencies using the provided script:**
+* **For macOS/Linux:**
+```./build.sh```
+* **For Windows:**
+```build.bat```
 
 This script will:
 * Install the necessary Python packages listed in requirements.txt.
