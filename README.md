@@ -18,23 +18,23 @@ If you don’t have virtualenv installed, you can install it via pip:
 pip install virtualenv
 ```
 Then create and activate a virtual environment:
-* **For macOS/Linux:**
+* For macOS/Linux:
 ```
 virtualenv venv
 source venv/bin/activate
 ```
-* **For Windows:**
+* For Windows:
 ```
 python -m venv venv
 venv\Scripts\activate
 ```
 
 3. **Install dependencies using the provided script:**
-* **For macOS/Linux:**
+* For macOS/Linux:
 ```
 ./build.sh
 ```
-* **For Windows:**
+* For Windows:
 ```
 build.bat
 ```
