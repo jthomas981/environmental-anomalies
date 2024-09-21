@@ -14,7 +14,9 @@ cd environmental-anomalies
 
 2. **Set up a virtual environment:**
 If you don’t have virtualenv installed, you can install it via pip:
-```pip install virtualenv```
+```
+pip install virtualenv
+```
 Then create and activate a virtual environment:
 * **For macOS/Linux:**
 ```
@@ -29,9 +31,13 @@ venv\Scripts\activate
 
 3. **Install dependencies using the provided script:**
 * **For macOS/Linux:**
-```./build.sh```
+```
+./build.sh
+```
 * **For Windows:**
-```build.bat```
+```
+build.bat
+```
 
 This script will:
 * Install the necessary Python packages listed in requirements.txt.
